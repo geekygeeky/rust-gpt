@@ -51,6 +51,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let openai_key = env::var("API_KEY").unwrap();
     let auth_header = format!("Bearer {}", openai_key);
     println!("{esc}c", esc = 27 as char);
+    let ascii_art = r#"
+    _____            _      _____ _____ _______
+    |  __ \         | |    / ____|  __ \__   __|
+    | |__) |   _ ___| |_  | |  __| |__) | | |
+    |  _  / | | / __| __| | | |_ |  ___/  | |
+    | | \ \ |_| \__ \ |_  | |__| | |      | |
+    |_|  \_\__,_|___/\__|  \_____|_|      |_|
+    "#;
+    println!("{ascii_art}");
 
     loop {
         print!(">");
